@@ -1,4 +1,14 @@
-
+var firebase = {
+      apiKey: "AIzaSyA-Cefy8n1kitVl1d2RUZoBUzengNHdTX8",
+      authDomain: "lets-chat-22455.firebaseapp.com",
+      databaseURL: "https://lets-chat-22455-default-rtdb.firebaseio.com",
+      projectId: "lets-chat-22455",
+      storageBucket: "lets-chat-22455.appspot.com",
+      messagingSenderId: "66451277521",
+      appId: "1:66451277521:web:240e6dc02aa5863a6c67f0"
+    };
+    
+    var app = initializeApp(firebase);
 //ADD YOUR FIREBASE LINKS HERE
 
 function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
@@ -34,4 +44,11 @@ function redirectToRoomName()
 
 
 }
+function logout(){
+      localStorage.removeItem("user_name",user_name);
+      localStorage.removeItem("room_name",room_name);
+      window.location.href = "index.html";
+}
+
+
 
